@@ -1,0 +1,17 @@
+<Window x:Class="RateController.Views.SwitchesView"
+    xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	Title="Switches">
+	<Grid Height="173" Width="323">
+		<Button Name="btnAutoSection" Height="46" Width="142" TabIndex="169" Click="btnAutoSection_Click" Margin="158,105,23,22" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Auto Section</Button>
+		<Button Name="btnAutoRate" Height="46" Width="142" TabIndex="168" Click="btnAutoRate_Click" Margin="2,105,179,22" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Auto Rate</Button>
+		<Button Name="btnDown" Height="46" Width="64" TabIndex="166" Background="Transparent" Margin="236,-3,23,130" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<Button Name="btnMaster" Height="46" Width="64" TabIndex="167" Background="LightGreen" Margin="2,-3,257,130" HorizontalAlignment="Right" VerticalAlignment="Bottom" >MST</Button>
+		<Button Name="btnUp" Height="46" Width="64" TabIndex="165" Background="Transparent" Margin="158,-3,101,130" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<Button Name="btn2" Height="46" Width="64" TabIndex="161" Click="btn2_Click" Margin="80,53,179,74" HorizontalAlignment="Right" VerticalAlignment="Bottom" >2</Button>
+		<Button Name="btAuto" Height="46" Width="64" TabIndex="164" Click="btAuto_Click" Margin="80,-3,179,130" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Auto</Button>
+		<Button Name="btn4" Height="46" Width="64" TabIndex="163" Click="btn4_Click" Margin="236,53,23,74" HorizontalAlignment="Right" VerticalAlignment="Bottom" >4</Button>
+		<Button Name="btn3" Height="46" Width="64" TabIndex="162" Click="btn3_Click" Margin="158,53,101,74" HorizontalAlignment="Right" VerticalAlignment="Bottom" >3</Button>
+		<Button Name="btn1" Height="46" Width="64" TabIndex="160" Click="btn1_Click" Margin="2,53,257,74" HorizontalAlignment="Right" VerticalAlignment="Bottom" >1</Button>
+	</Grid>
+</Window>
+

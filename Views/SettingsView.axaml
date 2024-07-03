@@ -1,0 +1,234 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="RateController.Views.SettingsView" SizeToContent="WidthAndHeight" CanResize="False" Title="Products">
+		<Window.Styles>
+      <StyleInclude Source="/Styles/GroupBox.axaml"/>
+  </Window.Styles>
+	 <DockPanel Height="596" Width="513">
+		<TextBlock Name="lbProduct" TextDecorations="Underline" DockPanel.Dock="Top" FontSize="14" HorizontalAlignment="Center"  >Product</TextBlock>
+	    <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="6">
+			<Button Name="btnLeft" Height="72" Width="72" Background="Transparent" Click="btnLeft_Click" >
+			    <Image Source="avares://RateController/Images/ArrowLeft.png"/>
+			</Button>
+			<Button Name="btnRight" Height="72" Width="72" Background="Transparent" Click="btnRight_Click" >
+			     <Image Source="avares://RateController/Images/ArrowRight.png"/>
+			</Button>
+			<Button Name="btnCancel" Height="72" Width="72" IsEnabled="False" Background="Transparent" Click="btnCancel_Click" >
+			      <Image Source="avares://RateController/Images/Cancel64.png"/>
+			</Button>
+			<Button Name="btnOK" Classes="accent" Height="72" Width="72" Background="Transparent" Click="bntOK_Click" >
+			       <Image Source="avares://RateController/Images/OK64.png"/>
+			</Button>
+		</StackPanel>
+		<TabControl Name="tcProducts" TabStripPlacement="Top">
+		<TabItem Name="tbs0" Header="Rate" FontSize="14" FontWeight="Bold">
+	       <Canvas Name="cantbs0" Height="427" Width="484" >
+		<Canvas Name="pnlFan" Height="424" Width="481" Margin="-10,-12,42,184" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+		<Button Name="btnFan" Height="50" Width="50" TabIndex="202" Background="Transparent" Click="btnFan_Click" Margin="190,305,273,241" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<TextBlock Name="label7" Height="32" Width="80" FontSize="11"  TabIndex="201" Margin="80,251,353,313" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Started</TextBlock>
+		<TextBlock Name="lbFanStarted" Height="46" Width="50" FontSize="11"  TabIndex="200" Margin="310,244,153,306" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbFanErrorValue" Height="39" Width="111" FontSize="11"  TabIndex="196" Margin="279,162,123,395" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbFanError" Height="32" Width="86" FontSize="11"  TabIndex="197" Margin="76,166,351,398" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Error %</TextBlock>
+		<TextBlock Name="lbFanRPMvalue" Height="39" Width="111" FontSize="11"  TabIndex="194" Margin="279,121,123,436" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbFanRPM" Height="32" Width="125" FontSize="11"  TabIndex="195" Margin="76,125,312,439" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Current RPM</TextBlock>
+		<TextBlock Name="lbFanPWMvalue" Height="39" Width="111" FontSize="11"  TabIndex="190" Margin="279,203,123,354" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbFanPWM" Height="32" Width="61" FontSize="11"  TabIndex="191" Margin="76,207,376,357" HorizontalAlignment="Right" VerticalAlignment="Bottom" >PWM</TextBlock>
+		<TextBlock Name="lbCountsRPM" Height="32" Width="206" FontSize="11"  TabIndex="117" Margin="76,43,231,521" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Sensor Counts / RPM</TextBlock>
+		<TextBox Name="tbCountsRPM" Height="30" Width="102" TextAlignment="Right" TabIndex="116" TextInput="tbCountsRPM_TextChanged" Margin="269,39,142,527" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="lbTargetRPM" Height="32" Width="117" FontSize="11"  TabIndex="114" Margin="76,84,320,480" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Target RPM</TextBlock>
+		<TextBox Name="tbTargetRPM" Height="30" Width="102" TextAlignment="Right" TabIndex="113" TextInput="tbTargetRPM_TextChanged" Margin="269,80,142,486" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >0</TextBox>
+		</Canvas>
+		<TextBlock Name="lb0" Height="32" Width="138" FontSize="11"  TabIndex="122" Margin="30,10,335,546" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Product Name</TextBlock>
+		<TextBox Name="tbProduct" Height="30" Width="176" TextAlignment="Center" TabIndex="0" TextInput="tbProduct_TextChanged" Margin="210,4,117,552" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<ComboBox Name="ValveType" Height="31" Width="176" TabIndex="1" Margin="210,42,117,513" HorizontalAlignment="Right" VerticalAlignment="Bottom" SelectionChanged="ValveType_SelectedIndexChanged" >
+			<ComboBoxItem>Standard Valve</ComboBoxItem>
+			<ComboBoxItem>Fast Close Valve</ComboBoxItem>
+			<ComboBoxItem>Motor</ComboBoxItem>
+			<ComboBoxItem>Timed Valve</ComboBoxItem>
+		</ComboBox>
+		<TextBlock Name="lb5" Height="32" Width="125" FontSize="11"  TabIndex="111" Margin="30,46,348,508" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Control Type</TextBlock>
+		<Canvas Name="pnlMain" Height="343" Width="444" Margin="27,65,42,188" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+		<TextBlock Name="LabProdDensity" Height="32" Width="80" FontSize="11"  TabIndex="134" Margin="2,127,431,437" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Density</TextBlock>
+		<ToggleSwitch Name="CbUseProdDensity" TabIndex="133" Margin="100,115,338,453" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="CbUseProdDensity_CheckedChanged_1" ></ToggleSwitch>
+		<TextBox Name="ProdDensity" Height="30" Width="100" TextAlignment="Center" TabIndex="132" TextInput="ProdDensity_TextChanged" Margin="182,123,231,443" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >143</TextBox>
+		<TextBlock Name="lbSensorCounts" Height="32" Width="191" FontSize="11"  TabIndex="115" Margin="2,93,320,471" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Sensor Counts / Unit</TextBlock>
+		<ComboBox Name="AreaUnits" Height="31" Width="176" TabIndex="3" Margin="182,50,155,515" HorizontalAlignment="Right" VerticalAlignment="Bottom" SelectionChanged="AreaUnits_SelectedIndexChanged" >
+			<ComboBoxItem>Acre</ComboBoxItem>
+			<ComboBoxItem>Hectare</ComboBoxItem>
+			<ComboBoxItem>Minute</ComboBoxItem>
+			<ComboBoxItem>Hour</ComboBoxItem>
+		</ComboBox>
+		<TextBox Name="tbVolumeUnits" Height="30" Width="176" TextAlignment="Center" TabIndex="128" TextInput="tbVolumeUnits_TextChanged" Margin="182,12,155,554" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<Button Name="btnResetTank" Height="34" Width="182" TabIndex="9" Click="btnResetTank_Click" Margin="-8,268,339,294" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Tank Remaining</Button>
+		<TextBox Name="TankSize" Height="30" Width="100" TextAlignment="Center" TabIndex="6" TextInput="TankSize_TextChanged" Margin="182,234,231,332" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBox Name="TankRemain" Height="30" Width="100" TextAlignment="Center" TabIndex="7" TextInput="TankRemain_TextChanged" Margin="182,270,231,296" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBox Name="FlowCal" Height="30" Width="100" TextAlignment="Center" TabIndex="4" TextInput="FlowCal_TextChanged" Margin="182,89,231,477" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="lb6" Height="32" Width="99" FontSize="11"  TabIndex="116" Margin="2,238,412,326" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Tank Size</TextBlock>
+		<TextBox Name="tbAltRate" Height="30" Width="100" TextAlignment="Center" TabIndex="127" TextInput="tbAltRate_TextChanged" Margin="182,198,231,368" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >75</TextBox>
+		<TextBlock Name="lbBaseRateDes" Height="32" Width="102" FontSize="11"  TabIndex="112" Margin="2,164,409,400" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Base Rate</TextBlock>
+		<TextBlock Name="lb2" Height="32" Width="144" FontSize="11"  TabIndex="113" Margin="2,54,367,510" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Coverage Units</TextBlock>
+		<TextBlock Name="lb1" Height="32" Width="136" FontSize="11"  TabIndex="114" Margin="2,15,375,549" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Quantity Units</TextBlock>
+		<TextBox Name="lbBaseRate" Height="30" Width="100" TextAlignment="Center" TabIndex="5" TextInput="RateSet_TextChanged" Margin="182,160,231,406" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >0</TextBox>
+		<TextBlock Name="lbAltRate" Height="32" Width="129" FontSize="11"  TabIndex="125" Margin="2,202,382,362" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Alt. Rate (%)</TextBlock>
+		</Canvas>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tabPage1" Header="VR" FontSize="14" FontWeight="Bold">
+		 <Canvas Name="cantabPage1" Height="427" Width="484" >
+		<TextBlock Name="lbMinRate" Height="32" Width="140" FontSize="11"  TabIndex="131" Margin="67,253,306,311" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Minimum Rate</TextBlock>
+		<TextBox Name="tbMinRate" Height="30" Width="100" TextAlignment="Center" TabIndex="130" TextInput="tbMinRate_TextChanged" Margin="247,249,166,317" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >37,000</TextBox>
+		<TextBlock Name="lbMaxRate" Height="32" Width="144" FontSize="11"  TabIndex="129" Margin="67,205,302,359" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Maximum Rate</TextBlock>
+		<TextBox Name="tbMaxRate" Height="30" Width="100" TextAlignment="Center" TabIndex="128" TextInput="tbMaxRate_TextChanged" Margin="247,201,166,365" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<ToggleSwitch Name="ckVR" Height="32" Width="192" TabIndex="127" Margin="126,91,195,473" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckVR_CheckedChanged" >Use Variable Rate</ToggleSwitch>
+		<TextBlock Name="lbVariableRate" Height="32" Width="87" FontSize="11"  TabIndex="125" Margin="67,157,359,407" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Channel</TextBlock>
+		<ComboBox Name="cbVR" Height="31" Width="58" TabIndex="126" Margin="247,153,208,412" HorizontalAlignment="Right" VerticalAlignment="Bottom" SelectionChanged="cbVR_SelectedIndexChanged_1" >
+			<ComboBoxItem>1</ComboBoxItem>
+			<ComboBoxItem>2</ComboBoxItem>
+			<ComboBoxItem>3</ComboBoxItem>
+			<ComboBoxItem>4</ComboBoxItem>
+			<ComboBoxItem>5</ComboBoxItem>
+			<ComboBoxItem>6</ComboBoxItem>
+			<ComboBoxItem>7</ComboBoxItem>
+			<ComboBoxItem>8</ComboBoxItem>
+		</ComboBox>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tbs4" Header="Control" FontSize="14" FontWeight="Bold">
+		   <Canvas Name="cantbs4" Height="427" Width="484" >
+		<HeaderedContentControl Header="" Background="Gray" Margin="65,216,98,259" HorizontalAlignment="Right" VerticalAlignment="Bottom" ><Canvas Height="97" Width="326" >
+		<TextBlock Name="lbExample" Height="34" Width="129" FontSize="11"  TabIndex="166" Background="Transparent" Margin="176,55,208,507" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<ComboBox Name="cbShift" Height="31" Width="120" TabIndex="156" Margin="166,13,227,552" HorizontalAlignment="Right" VerticalAlignment="Bottom" SelectionChanged="cbShift_SelectedIndexChanged" >
+			<ComboBoxItem>1</ComboBoxItem>
+			<ComboBoxItem>10</ComboBoxItem>
+			<ComboBoxItem>100</ComboBoxItem>
+			<ComboBoxItem>1</ComboBoxItem>
+			<ComboBoxItem>000</ComboBoxItem>
+			<ComboBoxItem>10</ComboBoxItem>
+			<ComboBoxItem>000</ComboBoxItem>
+			<ComboBoxItem>100</ComboBoxItem>
+			<ComboBoxItem>000</ComboBoxItem>
+			<ComboBoxItem>1</ComboBoxItem>
+			<ComboBoxItem>000</ComboBoxItem>
+			<ComboBoxItem>000</ComboBoxItem>
+			<ComboBoxItem>10</ComboBoxItem>
+			<ComboBoxItem>000</ComboBoxItem>
+			<ComboBoxItem>000</ComboBoxItem>
+		</ComboBox>
+		<TextBlock Name="label1" Height="32" Width="74" FontSize="11"  TabIndex="157" Margin="27,16,412,548" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Divisor</TextBlock>
+		<TextBlock Name="label3" Height="32" Width="105" FontSize="11"  TabIndex="158" Margin="27,56,381,508" HorizontalAlignment="Right" VerticalAlignment="Bottom" >P example</TextBlock>
+		</Canvas> 		</HeaderedContentControl>
+		<TextBlock Name="label12" Height="32" Width="80" FontSize="11"  TabIndex="151" Margin="299,98,144,466" HorizontalAlignment="Right" VerticalAlignment="Bottom" >(0-255)</TextBlock>
+		<TextBlock Name="label11" Height="32" Width="80" FontSize="11"  TabIndex="150" Margin="299,56,144,508" HorizontalAlignment="Right" VerticalAlignment="Bottom" >(0-255)</TextBlock>
+		<TextBlock Name="label10" Height="32" Width="80" FontSize="11"  TabIndex="149" Margin="299,14,144,550" HorizontalAlignment="Right" VerticalAlignment="Bottom" >(0-255)</TextBlock>
+		<TextBlock Name="label9" Height="32" Width="80" FontSize="11"  TabIndex="148" Margin="299,182,144,382" HorizontalAlignment="Right" VerticalAlignment="Bottom" >(0-255)</TextBlock>
+		<TextBlock Name="label5" Height="32" Width="80" FontSize="11"  TabIndex="147" Margin="299,140,144,424" HorizontalAlignment="Right" VerticalAlignment="Bottom" >(0-255)</TextBlock>
+		<TextBox Name="tbKD" Height="30" Width="41" TextAlignment="Right" TabIndex="145" TextInput="tbKP_TextChanged" Margin="232,94,240,472" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="lbDerivative" Height="32" Width="101" FontSize="11"  TabIndex="146" Margin="91,97,321,467" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Derivative</TextBlock>
+		<TextBox Name="tbKI" Height="30" Width="41" TextAlignment="Right" TabIndex="142" TextInput="tbKP_TextChanged" Margin="232,52,240,514" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="lbIntegral" Height="32" Width="91" FontSize="11"  TabIndex="143" Margin="91,55,331,509" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Integral </TextBlock>
+		<TextBox Name="tbMaxPWM" Height="30" Width="41" TextAlignment="Right" TabIndex="1" TextInput="tbKP_TextChanged" Margin="232,136,240,430" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="lbMax" Height="32" Width="148" FontSize="11"  TabIndex="126" Margin="91,139,274,425" HorizontalAlignment="Right" VerticalAlignment="Bottom" >PWM Maximum</TextBlock>
+		<TextBox Name="tbMinPWM" Height="30" Width="41" TextAlignment="Right" TabIndex="4" TextInput="tbKP_TextChanged" Margin="232,178,240,388" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="lbMin" Height="32" Width="144" FontSize="11"  TabIndex="122" Margin="91,181,278,383" HorizontalAlignment="Right" VerticalAlignment="Bottom" >PWM Minimum</TextBlock>
+		<TextBox Name="tbKP" Height="30" Width="41" TextAlignment="Right" TabIndex="1" TextInput="tbKP_TextChanged" Margin="232,10,240,556" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >100</TextBox>
+		<TextBlock Name="lbProportional" Height="32" Width="119" FontSize="11"  TabIndex="120" Margin="91,13,303,551" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Proportional</TextBlock>
+		<Button Name="btnTuningGraph" Height="72" Width="72" TabIndex="0" Background="Transparent" Click="btnTuningGraph_Click" Margin="232,334,209,190" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+		      <Image Source="avares://RateController/Resources/Chart.png"/>
+		</Button>
+		<Button Name="btnPIDloadDefaults" Height="72" Width="72" TabIndex="154" Background="Transparent" Click="btnPIDloadDefaults_Click" Margin="126,334,315,190" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+		     <Image Source="avares://RateController/Resources/VehFileLoad.png"/>
+		</Button>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tbs6" Header="Options" FontSize="14" FontWeight="Bold">
+		   <Canvas Name="cantbs6" Height="427" Width="484" >
+		<ToggleSwitch Name="ckBumpButtons" Height="32" Width="162" TabIndex="0" Margin="211,295,140,269" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckBumpButtons_CheckChanged" >Bump Buttons</ToggleSwitch>
+		<ToggleSwitch Name="ckDefault" Height="32" Width="162" TabIndex="119" Margin="28,295,323,269" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckDefault_CheckedChanged" >Default Product</ToggleSwitch>
+		<ToggleSwitch Name="ckConstantUPM" Height="32" Width="162" TabIndex="118" Margin="28,239,323,325" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckConstantUPM_CheckedChanged" >Constant UPM</ToggleSwitch>
+		<ToggleSwitch Name="ckOnScreen" Height="32" Width="162" TabIndex="117" Margin="28,183,323,381" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckOnScreen_CheckedChanged" >On Screen</ToggleSwitch>
+		<TextBlock Name="label28" Height="32" Width="38" FontSize="11"  TabIndex="116" Margin="432,188,43,376" HorizontalAlignment="Right" VerticalAlignment="Bottom" >%</TextBlock>
+		<TextBox Name="tbOffRate" Height="30" Width="33" TextAlignment="Center" TabIndex="2" IsEnabled="False" TextInput="tbOffRate_TextChanged" Margin="383,184,97,382" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >20</TextBox>
+		<TextBlock Name="lbMinimumUPM" Height="32" Width="139" FontSize="11"  TabIndex="114" Margin="221,244,153,320" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Minimum UPM</TextBlock>
+		<TextBox Name="tbMinUPM" Height="30" Width="67" TextAlignment="Center" TabIndex="1" TextInput="tbMinUPM_TextChanged" Margin="345,240,101,326" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<ToggleSwitch Name="ckOffRate" Height="32" Width="162" TabIndex="1" Margin="211,183,140,381" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckOffRate_CheckedChanged" >Off-rate Alarm   </ToggleSwitch>
+		<HeaderedContentControl Name="grpSensor" Header="" Background="Gray" Margin="297,43,38,427" HorizontalAlignment="Right" VerticalAlignment="Bottom" ><Canvas Height="102" Width="154" >
+		<RadioButton Name="rbMultiPulse" Height="37" Width="142" TabIndex="1" Margin="3,58,368,501" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Multi-pulse</RadioButton>
+		<RadioButton Name="rbSinglePulse" Height="37" Width="142" TabIndex="1" Margin="3,10,368,549" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Single pulse</RadioButton>
+		</Canvas> 		</HeaderedContentControl>
+		<HeaderedContentControl Header="" Background="Gray" Margin="18,43,227,427" HorizontalAlignment="Right" VerticalAlignment="Bottom" ><Canvas Height="102" Width="244" >
+		<TextBlock Name="lbSensorID" Height="32" Width="102" FontSize="11"  TabIndex="151" Margin="11,64,400,500" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Sensor ID</TextBlock>
+		<TextBox Name="tbSenID" Height="30" Width="67" TextAlignment="Center" TabIndex="1" TextInput="tbSenID_TextChanged" Margin="127,60,319,506" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >0</TextBox>
+		<TextBlock Name="ModuleIndicator" Height="46" Width="50" FontSize="11"  TabIndex="149" Margin="210,32,253,518" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbConID" Height="32" Width="106" FontSize="11"  TabIndex="148" Margin="11,16,396,548" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Module ID</TextBlock>
+		<TextBox Name="tbConID" Height="30" Width="67" TextAlignment="Center" TabIndex="0" TextInput="tbConID_TextChanged" Margin="127,12,319,554" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >0</TextBox>
+		</Canvas> 		</HeaderedContentControl>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tbs3" Header="Diagnostics" FontSize="14" FontWeight="Bold">
+		    <Canvas Name="cantbs3" Height="427" Width="484" >
+		<TextBlock Name="label2" Height="32" Width="123" FontSize="11"  TabIndex="208" Margin="12,305,378,259" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Wifi Signal</TextBlock>
+		<ProgressBar Name="wifiBar" Height="23" Width="100" TabIndex="207" Margin="2,335,411,238" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></ProgressBar>
+		<TextBox Name="tbCountsRev" Height="30" Width="130" TextAlignment="Center" TabIndex="3" PointerPressed="tbCountsRev_Click" TextInput="tbCountsRev_TextChanged" Margin="276,131,107,435" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label24" Height="32" Width="114" FontSize="11"  TabIndex="193" Margin="49,135,350,429" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Counts/Rev</TextBlock>
+		<TextBlock Name="label23" Height="32" Width="56" FontSize="11"  TabIndex="191" Margin="49,168,408,396" HorizontalAlignment="Right" VerticalAlignment="Bottom" >RPM</TextBlock>
+		<TextBlock Name="lbRPM" Height="34" Width="139" FontSize="11"  TabIndex="190" Margin="286,167,88,395" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbErrorPercent" Height="34" Width="139" FontSize="11"  TabIndex="188" Margin="286,69,88,493" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="label15" Height="32" Width="86" FontSize="11"  TabIndex="189" Margin="49,70,378,494" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Error %</TextBlock>
+		<TextBlock Name="label20" Height="32" Width="39" FontSize="11"  TabIndex="187" Margin="439,372,35,192" HorizontalAlignment="Right" VerticalAlignment="Bottom" >16</TextBlock>
+		<TextBlock Name="label19" Height="32" Width="29" FontSize="11"  TabIndex="186" Margin="125,371,359,193" HorizontalAlignment="Right" VerticalAlignment="Bottom" >9</TextBlock>
+		<TextBlock Name="label18" Height="32" Width="29" FontSize="11"  TabIndex="185" Margin="439,335,45,229" HorizontalAlignment="Right" VerticalAlignment="Bottom" >8</TextBlock>
+		<TextBlock Name="label17" Height="32" Width="29" FontSize="11"  TabIndex="184" Margin="125,336,359,228" HorizontalAlignment="Right" VerticalAlignment="Bottom" >1</TextBlock>
+		<TextBlock Name="lbSections" Height="32" Width="88" FontSize="11"  TabIndex="168" Margin="248,305,177,259" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Sections</TextBlock>
+		<TextBlock Name="lbRateAppliedData" Height="34" Width="139" FontSize="11"  TabIndex="2" Background="Transparent" Margin="286,7,88,555" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lb33" Height="32" Width="124" FontSize="11"  TabIndex="166" Margin="49,8,340,556" HorizontalAlignment="Right" VerticalAlignment="Bottom" >UPM Applied</TextBlock>
+		<TextBlock Name="lbRateSetData" Height="34" Width="139" FontSize="11"  TabIndex="163" Margin="286,38,88,524" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lb32" Height="32" Width="117" FontSize="11"  TabIndex="164" Margin="49,39,347,525" HorizontalAlignment="Right" VerticalAlignment="Bottom" >UPM Target</TextBlock>
+		<TextBlock Name="lbSpeedData" Height="34" Width="139" FontSize="11"  TabIndex="161" Margin="286,198,88,364" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbSpeed" Height="32" Width="72" FontSize="11"  TabIndex="162" Margin="49,199,392,365" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Speed</TextBlock>
+		<TextBlock Name="lbWidthData" Height="34" Width="139" FontSize="11"  TabIndex="155" Margin="286,229,88,333" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbWidth" Height="32" Width="175" FontSize="11"  TabIndex="156" Margin="49,230,289,334" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Working Width (ft)</TextBlock>
+		<TextBlock Name="lbPWMdata" Height="34" Width="139" FontSize="11"  TabIndex="153" Margin="286,100,88,462" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lb34" Height="32" Width="61" FontSize="11"  TabIndex="154" Margin="49,101,403,463" HorizontalAlignment="Right" VerticalAlignment="Bottom" >PWM</TextBlock>
+		<TextBlock Name="lbWorkRateData" Height="34" Width="139" FontSize="11"  TabIndex="151" Margin="286,260,88,302" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbWorkRate" Height="32" Width="117" FontSize="11"  TabIndex="152" Margin="49,261,347,303" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Hectares/hr</TextBlock>
+		<TextBlock Name="sec15" Height="32" Width="39" FontSize="11"  TabIndex="183" Margin="403,372,71,192" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec14" Height="32" Width="39" FontSize="11"  TabIndex="182" Margin="367,372,107,192" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec13" Height="32" Width="39" FontSize="11"  TabIndex="181" Margin="331,372,143,192" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec12" Height="32" Width="39" FontSize="11"  TabIndex="180" Margin="295,372,179,192" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec11" Height="32" Width="39" FontSize="11"  TabIndex="179" Margin="259,372,215,192" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec10" Height="32" Width="39" FontSize="11"  TabIndex="178" Margin="223,372,251,192" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec9" Height="32" Width="39" FontSize="11"  TabIndex="177" Margin="187,372,287,192" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec8" Height="32" Width="39" FontSize="11"  TabIndex="176" Margin="151,372,323,192" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec7" Height="32" Width="39" FontSize="11"  TabIndex="175" Margin="403,336,71,228" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec6" Height="32" Width="39" FontSize="11"  TabIndex="174" Margin="367,336,107,228" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec5" Height="32" Width="39" FontSize="11"  TabIndex="173" Margin="331,336,143,228" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec4" Height="32" Width="39" FontSize="11"  TabIndex="172" Margin="295,336,179,228" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec3" Height="32" Width="39" FontSize="11"  TabIndex="171" Margin="259,336,215,228" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec2" Height="32" Width="39" FontSize="11"  TabIndex="170" Margin="223,336,251,228" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec1" Height="32" Width="39" FontSize="11"  TabIndex="169" Margin="187,336,287,228" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="sec0" Height="32" Width="39" FontSize="11"  TabIndex="167" Margin="151,336,323,228" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tabPage2" Header="Data" FontSize="14" FontWeight="Bold">
+		   <Canvas Name="cantabPage2" Height="427" Width="484" >
+		<ToggleSwitch Name="ckHours2" Height="46" Width="52" TabIndex="189" Margin="361,325,100,225" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckQuanitiy2_CheckedChanged" ></ToggleSwitch>
+		<ToggleSwitch Name="ckHours1" Height="46" Width="52" TabIndex="188" Margin="361,265,100,285" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckQuanitiy2_CheckedChanged" ></ToggleSwitch>
+		<TextBlock Name="lbHours1value" Height="34" Width="139" FontSize="11"  TabIndex="186" Background="Transparent" Margin="198,276,176,286" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbHours1" Height="32" Width="84" FontSize="11"  TabIndex="187" Margin="48,277,381,287" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Hours 1</TextBlock>
+		<TextBlock Name="lbHours2value" Height="34" Width="139" FontSize="11"  TabIndex="184" Margin="198,336,176,226" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbHours2" Height="32" Width="84" FontSize="11"  TabIndex="185" Margin="48,337,381,227" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Hours 2</TextBlock>
+		<ToggleSwitch Name="ckQuantity2" Height="46" Width="52" TabIndex="183" Margin="361,205,100,345" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckQuanitiy2_CheckedChanged" ></ToggleSwitch>
+		<ToggleSwitch Name="ckQuantity1" Height="46" Width="52" TabIndex="182" Margin="361,145,100,405" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckQuanitiy2_CheckedChanged" ></ToggleSwitch>
+		<ToggleSwitch Name="ckArea2" Height="46" Width="52" TabIndex="181" Margin="361,85,100,465" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckQuanitiy2_CheckedChanged" ></ToggleSwitch>
+		<ToggleSwitch Name="ckArea1" Height="46" Width="52" TabIndex="180" Margin="361,25,100,525" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckQuanitiy2_CheckedChanged" ></ToggleSwitch>
+		<TextBlock Name="lbQuantity1" Height="34" Width="139" FontSize="11"  TabIndex="173" Background="Transparent" Margin="198,156,176,406" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbGallons1" Height="32" Width="105" FontSize="11"  TabIndex="174" Margin="48,157,360,407" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Quantity 1</TextBlock>
+		<TextBlock Name="lbQuantity2" Height="34" Width="139" FontSize="11"  TabIndex="171" Margin="198,216,176,346" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbGallons2" Height="32" Width="105" FontSize="11"  TabIndex="172" Margin="48,217,360,347" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Quantity 2</TextBlock>
+		<TextBlock Name="lbArea1" Height="34" Width="139" FontSize="11"  TabIndex="169" Background="Transparent" Margin="198,36,176,526" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbAcres1" Height="32" Width="80" FontSize="11"  TabIndex="170" Margin="48,37,385,527" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Acres 1</TextBlock>
+		<TextBlock Name="lbArea2" Height="34" Width="139" FontSize="11"  TabIndex="167" Margin="198,96,176,466" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<TextBlock Name="lbAcres2" Height="32" Width="80" FontSize="11"  TabIndex="168" Margin="48,97,385,467" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Acres 2</TextBlock>
+		</Canvas>
+		</TabItem>
+		</TabControl>
+	</DockPanel>
+</Window>

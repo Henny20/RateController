@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:RateController.ViewModels"
+        x:DataType="vm:PressureViewModel"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RateController.Views.PressureView"
+        SizeToContent="WidthAndHeight" CanResize="False"
+      	Title="Pressure">
+    <Window.DataContext>
+        <vm:PressureViewModel/>
+    </Window.DataContext>
+
+	<Grid Height="416" Width="663">
+		<TextBox Name="tbPressureID" Height="30" Width="33" TextAlignment="Center" TabIndex="300" TextInput="tbPressureID_TextChanged" Margin="231,338,399,48" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >0</TextBox>
+		<ToggleSwitch Name="ckShowPressure" Height="34" Width="193" TabIndex="298" Margin="32,336,438,46" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckShowPressure_CheckedChanged" >Show Pressure</ToggleSwitch>
+		<DataGrid Name="DGV" Height="309" Width="636" Margin="5,0,22,107" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+<DataGrid.Columns><DataGridTextColumn Header="ID" Width="50" />
+<DataGridTextColumn Header="Description" Width="130" />
+<DataGridTextColumn Header="Module" Width="75" />
+<DataGridTextColumn Header="Sensor" Width="75" />
+<DataGridTextColumn Header="Units/Volt" Width="90" />
+<DataGridTextColumn Header="Offset" Width="90" />
+<DataGridTextColumn Header="Pressure" Width="100" />
+</DataGrid.Columns>		</DataGrid>
+		<Button Name="btnCancel" Height="72" Width="72" TabIndex="296" IsEnabled="False" Background="Transparent" Click="btnCancel_Click" Margin="488,317,103,27" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<Button Name="btnOK" Height="72" Width="72" TabIndex="261" Background="Transparent" Click="bntOK_Click" Margin="569,317,22,27" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+	</Grid>
+</Window>
+

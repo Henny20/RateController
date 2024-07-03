@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<Window xmlns="https://github.com/avaloniaui" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" 
+        x:Class="RateController.Views.ModuleView" 
+        SizeToContent="WidthAndHeight" CanResize="False" 
+        Title="Comm Diagnostics">
+  <DockPanel Height="629" Width="584" Margin="10">
+    <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Spacing="10">
+      <Button Name="btnSave" Height="72" Width="81" TabIndex="249" Background="Transparent" Click="btnSave_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+      <Button Name="btnStart" Height="72" Width="81" TabIndex="243" Background="Transparent" Click="btnStart_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+      <Button Name="bntOK" Height="72" Width="81" TabIndex="210" Background="Transparent" Click="bntOK_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+      <StackPanel>
+        <WrapPanel>
+          <TextBlock Name="label4" Height="32" Width="102" FontSize="11" TabIndex="241" HorizontalAlignment="Right" VerticalAlignment="Bottom">PGN Time</TextBlock>
+          <TextBlock Name="lbTime" Height="32" Width="105" FontSize="11" TabIndex="242" HorizontalAlignment="Left" VerticalAlignment="Bottom">0</TextBlock>
+        </WrapPanel>
+        <WrapPanel>
+          <TextBlock Name="label2" Height="32" Width="106" FontSize="11" TabIndex="237" HorizontalAlignment="Right" VerticalAlignment="Bottom">Module ID</TextBlock>
+          <TextBlock Name="lbModID" Height="32" Width="105" FontSize="11" TabIndex="238" HorizontalAlignment="Left" VerticalAlignment="Bottom">0</TextBlock>
+        </WrapPanel>
+        <WrapPanel>
+          <TextBlock Name="label6" Height="32" Width="147" FontSize="11" TabIndex="235" HorizontalAlignment="Right" VerticalAlignment="Bottom">Module Version</TextBlock>
+          <TextBlock Name="lbInoID" Height="32" Width="105" FontSize="11" TabIndex="236" HorizontalAlignment="Left" VerticalAlignment="Bottom">0</TextBlock>
+        </WrapPanel>
+        <WrapPanel>
+          <TextBlock Name="label27" Height="32" Width="154" FontSize="11" TabIndex="233" HorizontalAlignment="Right" VerticalAlignment="Bottom">Network Subnet</TextBlock>
+          <TextBlock Name="lbIP" Height="32" Width="136" FontSize="11" TabIndex="234" HorizontalAlignment="Left" VerticalAlignment="Bottom">-.-.-.-</TextBlock>
+        </WrapPanel>
+      </StackPanel>
+      <StackPanel>
+        <WrapPanel>
+          <TextBlock Name="label11" Height="32" Width="114" FontSize="11" TabIndex="248" HorizontalAlignment="Right" VerticalAlignment="Bottom">RC Date</TextBlock>
+          <TextBlock Name="lbDate" Height="32" Width="125" FontSize="11" TabIndex="247" HorizontalAlignment="Right" VerticalAlignment="Bottom">01 Jan 01</TextBlock>
+        </WrapPanel>
+        <WrapPanel>
+          <TextBlock Name="lbVersion" Height="32" Width="114" FontSize="11" TabIndex="246" HorizontalAlignment="Right" VerticalAlignment="Bottom">RC Version</TextBlock>
+          <TextBlock Name="lbAppVersion" Height="32" Width="125" FontSize="11" TabIndex="245" HorizontalAlignment="Right" VerticalAlignment="Bottom">1.0.0</TextBlock>
+        </WrapPanel>
+      </StackPanel>
+    </StackPanel>
+    <TabControl Name="tabControl1" TabStripPlacement="Top">
+      <TabItem Name="tabPage1" Header="Ethernet">
+        <WrapPanel Margin="0, 50">
+          <TextBox Name="tbEthernet" Height="309" Width="307" TabIndex="221" TextWrapping="Wrap"/>
+          <StackPanel Name="cantabPage1">
+            <TextBlock Name="label12" Height="32" Width="175" FontSize="11" TabIndex="252">32618   switch box</TextBlock>
+            <TextBlock Name="label8" Height="32" Width="212" FontSize="11" TabIndex="251">32503   subnet change</TextBlock>
+            <TextBlock Name="label9" Height="32" Width="187" FontSize="11" TabIndex="250">32502   PID settings</TextBlock>
+            <TextBlock Name="label10" Height="32" Width="197" FontSize="11" TabIndex="249">32501   relay settings</TextBlock>
+            <TextBlock Name="label7" Height="32" Width="190" FontSize="11" TabIndex="248">32500   rate settings</TextBlock>
+            <TextBlock Name="label5" Height="32" Width="186" FontSize="11" TabIndex="247">32401   analog data</TextBlock>
+            <TextBlock Name="label1" Height="32" Width="187" FontSize="11" TabIndex="246">32400   rate applied</TextBlock>
+          </StackPanel>
+        </WrapPanel>
+      </TabItem>
+      <TabItem Name="tabPage2" Header="Serial">
+        <StackPanel Name="cantabPage2" Height="332" Width="544">
+          <TextBlock Name="PortName" Height="32" Width="104" FontSize="11" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+          <ComboBox Name="cboPort1" Height="37" Width="47" TabIndex="224">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+          </ComboBox>
+          <TextBlock Name="lb3" Height="32" Width="104" FontSize="11" TabIndex="223" HorizontalAlignment="Right" VerticalAlignment="Bottom">Serial Port</TextBlock>
+          <TextBox Name="tbSerial" Height="265" Width="522" TabIndex="222" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap"/>
+        </StackPanel>
+      </TabItem>
+      <TabItem Name="tabPage3" Header="Activity Log">
+        <StackPanel Name="cantabPage3" Height="332" Width="544">
+          <TextBox Name="tbActivity" Height="314" Width="526" TabIndex="223" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap"/>
+        </StackPanel>
+      </TabItem>
+      <TabItem Name="tabPage4" Header="Error Log">
+        <StackPanel Name="cantabPage4" Height="332" Width="544">
+          <TextBox Name="tbErrors" Height="314" Width="527" TabIndex="224" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap"/>
+        </StackPanel>
+      </TabItem>
+      <TabItem Name="tabPage5" Header="Help">
+        <StackPanel Name="cantabPage5" Height="332" Width="544">
+          <TextBlock Name="linkLabel4" Height="33" Width="102" FontSize="11" TabIndex="6" HorizontalAlignment="Left" VerticalAlignment="Bottom">PCBsetup</TextBlock>
+          <TextBlock Name="linkLabel3" Height="33" Width="65" FontSize="11" TabIndex="5" HorizontalAlignment="Left" VerticalAlignment="Bottom">PCBs</TextBlock>
+          <TextBlock Name="linkLabel2" Height="33" Width="54" FontSize="11" TabIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom">Wiki</TextBlock>
+          <TextBlock Name="linkLabel1" Height="33" Width="96" FontSize="11" TabIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom">Help files</TextBlock>
+        </StackPanel>
+      </TabItem>
+    </TabControl>
+  </DockPanel>
+</Window>

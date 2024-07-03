@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Window xmlns="https://github.com/avaloniaui" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" 
+        SizeToContent="WidthAndHeight" CanResize="False" 
+        x:Class="RateController.Views.CommView" 
+        Title="Comm">
+  <Window.Styles>
+    <StyleInclude Source="/Styles/GroupBox.axaml"/>
+  </Window.Styles>
+  <Grid Height="412" Width="493" Margin="10">
+    <Button Name="btnRescan" Height="72" Width="72" TabIndex="150" Background="Transparent" Click="btnRescan_Click" Margin="324,329,97,11" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+    <HeaderedContentControl Header="Serial3" Background="Gray" Margin="6,214,0,90" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+      <Canvas Height="84" Width="463">
+        <Button Name="btnConnect3" Height="37" Width="127" TabIndex="122" Click="btnConnect3_Click" Margin="7,30,359,345" HorizontalAlignment="Right" VerticalAlignment="Bottom">Connect</Button>
+        <ComboBox Name="cboPort3" Height="37" Width="127" TabIndex="121" Margin="140,30,226,345" HorizontalAlignment="Right" VerticalAlignment="Bottom" SelectionChanged="cboPort3_SelectedIndexChanged"/>
+        <TextBlock Name="label28" Height="32" Width="136" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="125" Margin="283,3,74,377" HorizontalAlignment="Right" VerticalAlignment="Bottom">Baud</TextBlock>
+        <ComboBox Name="cboBaud3" Height="37" Width="127" TabIndex="124" Margin="273,30,93,345" HorizontalAlignment="Right" VerticalAlignment="Bottom" SelectionChanged="cboBaud3_SelectedIndexChanged">
+          <ComboBoxItem>4800</ComboBoxItem>
+          <ComboBoxItem>9600</ComboBoxItem>
+          <ComboBoxItem>19200</ComboBoxItem>
+          <ComboBoxItem>38400</ComboBoxItem>
+          <ComboBoxItem>57600</ComboBoxItem>
+          <ComboBoxItem>115200</ComboBoxItem>
+        </ComboBox>
+        <TextBlock Name="label29" Height="32" Width="136" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="120" Margin="150,3,207,377" HorizontalAlignment="Right" VerticalAlignment="Bottom">Port</TextBlock>
+        <TextBlock Name="PortIndicator3" Height="46" Width="50" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="123" Margin="416,30,27,336" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+      </Canvas>
+    </HeaderedContentControl>
+    <HeaderedContentControl Header="Serial2" Background="Gray" Margin="6,104,0,200" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+      <Canvas Height="84" Width="463">
+        <Button Name="btnConnect2" Height="37" Width="127" TabIndex="122" Click="btnConnect2_Click" Margin="7,30,359,345" HorizontalAlignment="Right" VerticalAlignment="Bottom">Connect</Button>
+        <ComboBox Name="cboPort2" Height="37" Width="127" TabIndex="121" Margin="140,30,226,345" HorizontalAlignment="Right" VerticalAlignment="Bottom" SelectionChanged="cboPort2_SelectedIndexChanged"/>
+        <TextBlock Name="label22" Height="32" Width="136" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="125" Margin="283,3,74,377" HorizontalAlignment="Right" VerticalAlignment="Bottom">Baud</TextBlock>
+        <ComboBox Name="cboBaud2" Height="37" Width="127" TabIndex="124" Margin="273,30,93,345" HorizontalAlignment="Right" VerticalAlignment="Bottom" SelectionChanged="cboBaud2_SelectedIndexChanged">
+          <ComboBoxItem>4800</ComboBoxItem>
+          <ComboBoxItem>9600</ComboBoxItem>
+          <ComboBoxItem>19200</ComboBoxItem>
+          <ComboBoxItem>38400</ComboBoxItem>
+          <ComboBoxItem>57600</ComboBoxItem>
+          <ComboBoxItem>115200</ComboBoxItem>
+        </ComboBox>
+        <TextBlock Name="label25" Height="32" Width="136" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="120" Margin="150,3,207,377" HorizontalAlignment="Right" VerticalAlignment="Bottom">Port</TextBlock>
+        <TextBlock Name="PortIndicator2" Height="46" Width="50" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="123" Margin="416,30,27,336" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+      </Canvas>
+    </HeaderedContentControl>
+    <HeaderedContentControl Header="Serial1" Background="Gray" Margin="6,-6,0,310" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+      <Canvas Height="84" Width="463">
+        <Button Name="btnConnect1" Height="37" Width="127" TabIndex="122" Click="btnConnect1_Click" Margin="7,32,359,343" HorizontalAlignment="Right" VerticalAlignment="Bottom">Connect</Button>
+        <ComboBox Name="cboPort1" Height="37" Width="127" TabIndex="121" Margin="140,32,226,343" HorizontalAlignment="Right" VerticalAlignment="Bottom" SelectionChanged="cboPort1_SelectedIndexChanged"/>
+        <TextBlock Name="lbBaud" Height="32" Width="136" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="125" Margin="283,5,74,375" HorizontalAlignment="Right" VerticalAlignment="Bottom">Baud</TextBlock>
+        <ComboBox Name="cboBaud1" Height="37" Width="127" TabIndex="124" Margin="273,32,93,343" HorizontalAlignment="Right" VerticalAlignment="Bottom" SelectionChanged="cboBaud1_SelectedIndexChanged">
+          <ComboBoxItem>4800</ComboBoxItem>
+          <ComboBoxItem>9600</ComboBoxItem>
+          <ComboBoxItem>19200</ComboBoxItem>
+          <ComboBoxItem>38400</ComboBoxItem>
+          <ComboBoxItem>57600</ComboBoxItem>
+          <ComboBoxItem>115200</ComboBoxItem>
+        </ComboBox>
+        <TextBlock Name="lbPort" Height="32" Width="136" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="120" Margin="150,5,207,375" HorizontalAlignment="Right" VerticalAlignment="Bottom">Port</TextBlock>
+        <TextBlock Name="PortIndicator1" Height="46" Width="50" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="123" Margin="416,32,27,334" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+      </Canvas>
+    </HeaderedContentControl>
+    <Button Name="bntOK" Height="72" Width="72" TabIndex="136" Background="Transparent" Click="bntOK_Click" Margin="402,329,19,11" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+  </Grid>
+</Window>

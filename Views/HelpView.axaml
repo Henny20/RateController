@@ -1,1 +1,13 @@
-
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RateController.Views.HelpView"
+        Title="Help">
+	<Grid Height="281" Width="484">
+		<Canvas Name="panel1" Height="184" Width="460" Margin="2,-3,22,100" HorizontalAlignment="Right" VerticalAlignment="Bottom" ><!--Click="panel1_Click" -->
+		<TextBlock Name="label1" Height="33" Width="69" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="0"  Margin="3,-6,412,254" HorizontalAlignment="Right" VerticalAlignment="Bottom" >label1</TextBlock><!--Click="panel1_Click"-->
+		</Canvas>
+	</Grid>
+</Window>

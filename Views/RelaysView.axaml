@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:RateController.ViewModels"
+        x:DataType="vm:RelaysViewModel"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RateController.Views.RelaysView"
+        SizeToContent="WidthAndHeight" CanResize="False"
+      	Title="Relays">
+    <Window.DataContext>
+        <vm:RelaysViewModel/>
+    </Window.DataContext>
+	<Grid Height="504" Width="432" Margin="0 20 0 0">
+		<Button Name="btnReset"  Classes="accent" Height="72" Width="72" TabIndex="153" Background="Transparent" Click="bnReset_Click" Margin="84,411,276,21" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Update">
+		       <!--Image Source="avares://RateController/Images/Update4.png"/-->
+		</Button>
+		<Button Name="btnRenumber"  Classes="accent" Height="72" Width="72" TabIndex="152" Background="Transparent" Click="btnRenumber_Click" Margin="167,411,193,21" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+			  <Image Source="avares://RateController/Images/add.png"/>
+		</Button>
+		<TextBlock Name="lbModule" Height="33" Width="83" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="151" Margin="16,0,333,471" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Module</TextBlock>
+		<TextBlock Name="ModuleIndicator" Height="46" Width="50" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="150" Margin="192,-6,190,464" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></TextBlock>
+		<ComboBox Name="cbModules" Height="31" Width="61" TabIndex="149" Margin="95,-3,276,476" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+			<ComboBoxItem>0</ComboBoxItem>
+			<ComboBoxItem>1</ComboBoxItem>
+			<ComboBoxItem>2</ComboBoxItem>
+			<ComboBoxItem>3</ComboBoxItem>
+			<ComboBoxItem>4</ComboBoxItem>
+			<ComboBoxItem>5</ComboBoxItem>
+			<ComboBoxItem>6</ComboBoxItem>
+			<ComboBoxItem>7</ComboBoxItem>
+		</ComboBox>
+		<Button Name="btnCancel" Height="72" Width="72" TabIndex="138" IsEnabled="False" Background="Transparent" Click="btnCancel_Click" Margin="251,411,109,21" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Cancel">
+		       <!--Image Source="avares://RateController/Images/Cancel64.png"/-->
+		</Button>
+		<Button Name="btnOK" Height="72" Width="72" TabIndex="139" Background="Transparent" Click="bntOK_Click" Margin="334,411,26,21" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="OK">
+		       <!--Image Source="avares://RateController/Images/OK64.png"/-->
+		</Button>
+		<!--ListBox ItemsSource="{Binding Relays}" Height="352" Width="391"   Margin="10,42,31,110" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+		     <ListBox.ItemTemplate>
+        <DataTemplate>
+            <StackPanel Orientation="Horizontal" Spacing="20">
+                <TextBlock Text="{Binding Id}" FontSize="10"/>
+                <TextBlock Text="{Binding Type}" FontSize="10"/>
+               
+            </StackPanel>
+        </DataTemplate>
+    </ListBox.ItemTemplate>
+    	</ListBox-->
+		<!--DataGrid  ItemsSource="{Binding Relays}" Height="352" Width="391" Margin="10,42,31,110" HorizontalAlignment="Right" VerticalAlignment="Bottom"    
+          GridLinesVisibility="All"
+          BorderThickness="1" BorderBrush="Gray">
+  <DataGrid.Columns>
+     <DataGridTextColumn Header="Relay"  Binding="{Binding Id}" />
+     <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
+     <DataGridTextColumn Header="Section #" Binding="{Binding SectionNumber}" />
+  </DataGrid.Columns>
+</DataGrid-->
+<DataGrid Name="DGV" ItemsSource="{Binding Relays}" Height="352" Width="391" Margin="10,42,31,110" HorizontalAlignment="Right" VerticalAlignment="Bottom"  GridLinesVisibility="All"  BorderThickness="1" BorderBrush="Gray">
+<DataGrid.Columns><DataGridTextColumn Header="Relay" Binding="{Binding Id}"  Width="100" />
+ <!--DataGridTemplateColumn  Width="*"  Header="Type" IsReadOnly="False">
+      <!DataGridTemplateColumn.CellTemplate>
+        <DataTemplate>
+           <ComboBox x:Name="combo" ItemsSource="{Binding $parent[DataGrid].Tag}"/>
+               </DataTemplate>
+      </DataGridTemplateColumn.CellTemplate>
+    </DataGridTemplateColumn-->
+<DataGridTextColumn Header="Section #" Width="100"  Binding="{Binding SectionNumber}"/>
+</DataGrid.Columns>		</DataGrid>
+
+
+	</Grid>
+</Window>

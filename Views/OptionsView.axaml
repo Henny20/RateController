@@ -1,0 +1,79 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="45"
+        SizeToContent="WidthAndHeight" CanResize="False"
+        x:Class="RateController.Views.OptionsView"
+        Title="Options">
+
+	<DockPanel Height="397" Width="462">
+	    <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="6">
+	    <Button Name="btnReset"  Height="50" Width="100" TabIndex="154" IsVisible="false" Click="btnReset_Click" ></Button>
+		<Button Name="btnCancel"  Height="50" Width="100" TabIndex="124" IsEnabled="False" Click="btnCancel_Click" Content="Cancel" >
+		</Button>
+		<Button Name="btnOK" Classes="accent" Height="50" Width="100" TabIndex="123"  Click="btnOK_Click" Content="OK">
+		</Button>
+		</StackPanel>
+		<TabControl Name="tcOptions" TabStripPlacement= "Top"  >
+		<TabItem Name="tabPage2" Header="Display" FontSize="14" FontWeight="Bold" >
+		<Canvas Name="cantabPage2" Height="266" Width="430" >
+		<ToggleSwitch Name="ckSingle" TabIndex="128" Margin="209,61,101,308" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckSingle_CheckedChanged" >Single Product</ToggleSwitch>
+		<ToggleSwitch Name="ckLargeScreen" TabIndex="127" Margin="26,57,272,306" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckTransparent_CheckedChanged" >Large Screen</ToggleSwitch>
+		<ToggleSwitch Name="ckPressure" TabIndex="123" Margin="209,130,89,233" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckTransparent_CheckedChanged" >Pressure</ToggleSwitch>
+		<ToggleSwitch Name="ckTransparent" TabIndex="119" Margin="26,130,272,233" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckTransparent_CheckedChanged" >Transparent</ToggleSwitch>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tabPage3" Header="Primed Start" FontSize="14" FontWeight="Bold" >
+		<Canvas Name="cantabPage3" Height="266" Width="430" >
+		<ToggleSwitch Name="ckResume" TabIndex="335" Margin="128,164,170,199" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckTransparent_CheckedChanged" >Resume</ToggleSwitch>
+		<TextBlock Name="lbDelaySeconds" Height="33" Width="98" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="334" Foreground="DarkGreen" Margin="295,115,69,249" HorizontalAlignment="Right" VerticalAlignment="Bottom" >seconds</TextBlock>
+		<TextBox Name="tbTime" Height="30" Width="65" TextAlignment="Center" TabIndex="330" TextInput="tbTime_TextChanged" Margin="214,34,183,333" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >0</TextBox>
+		<TextBox Name="tbSpeed" Height="30" Width="65" TextAlignment="Center" TabIndex="327" TextInput="tbTime_TextChanged" Margin="214,73,183,294" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >0</TextBox>
+		<TextBox Name="tbDelay" Height="30" Width="65" TextAlignment="Center" TabIndex="333" TextInput="tbTime_TextChanged" Margin="214,112,183,255" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >0</TextBox>
+		<TextBlock Name="lbPrimedSpeed" Height="32" Width="72" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="326" Margin="59,77,331,288" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Speed</TextBlock>
+		<TextBlock Name="lbSpeed" Height="33" Width="66" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="328" Foreground="DarkGreen" Margin="295,76,101,288" HorizontalAlignment="Right" VerticalAlignment="Bottom" >mph</TextBlock>
+		<TextBlock Name="lbDelay" Height="32" Width="126" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="332" Margin="59,116,277,249" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Switch Delay</TextBlock>
+		<TextBlock Name="lbOnTime" Height="32" Width="90" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="329" Margin="59,38,313,327" HorizontalAlignment="Right" VerticalAlignment="Bottom" >On Time</TextBlock>
+		<TextBlock Name="lbOnSeconds" Height="33" Width="98" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="331" Foreground="DarkGreen" Margin="295,37,69,327" HorizontalAlignment="Right" VerticalAlignment="Bottom" >seconds</TextBlock>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tabPage5" Header="Switches" FontSize="14" FontWeight="Bold" >
+		<Canvas Name="cantabPage5" Height="266" Width="430" >
+		<ToggleSwitch Name="ckDualAuto" TabIndex="125" Margin="242,-9,56,372" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckDualAuto_CheckedChanged" >Dual Auto</ToggleSwitch>
+		<DataGrid Name="DGV" Height="204" Width="405" Margin="1,33,56,160" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+<DataGrid.Columns><DataGridTextColumn Header="ID" Width="50" />
+<DataGridTextColumn Header="Description" Width="120" />
+<DataGridTextColumn Header="Module" Width="100" />
+<DataGridTextColumn Header="Relay" Width="100" />
+</DataGrid.Columns>		</DataGrid>
+		<ToggleSwitch Name="ckScreenSwitches" TabIndex="123" Margin="1,-9,297,372" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckDualAuto_CheckedChanged" >Use Switches</ToggleSwitch>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tabPage1" Header="Config" FontSize="14" FontWeight="Bold" >
+		<Canvas Name="cantabPage1" Height="266" Width="430" >
+		<ToggleSwitch Name="ckDefaultProduct" TabIndex="332" Margin="223,99,75,264" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckDefaultProduct_CheckedChanged" >Reset Products</ToggleSwitch>
+		<ToggleSwitch Name="ckNoMaster" TabIndex="331" Margin="223,19,75,344" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckNoMaster_CheckedChanged" >Master Override</ToggleSwitch>
+		<TextBox Name="tbSimSpeed" Height="30" Width="65" TextAlignment="Center" TabIndex="329" TextInput="tbSimSpeed_TextChanged" Margin="274,181,123,186" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >0</TextBox>
+		<TextBlock Name="lbSimUnits" Height="33" Width="66" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="330" Foreground="DarkGreen" Margin="355,184,41,180" HorizontalAlignment="Right" VerticalAlignment="Bottom" >mph</TextBlock>
+		<ToggleSwitch Name="ckSimSpeed" TabIndex="126" Margin="26,179,194,184" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rbLarge_CheckedChanged" >Simulate Speed (No AOG)</ToggleSwitch>
+		<ToggleSwitch Name="ckMetric" TabIndex="119" Margin="26,19,272,344" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rbLarge_CheckedChanged" >Metric Units</ToggleSwitch>
+		<ToggleSwitch Name="ckWorkSwitch" TabIndex="125" Margin="26,99,272,264" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="rbLarge_CheckedChanged" >Work Switch</ToggleSwitch>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tabPage4" Header="Language" FontSize="14" FontWeight="Bold">
+		<Canvas Name="cantabPage4" Height="266" Width="430" >
+		<RadioButton Name="rbFrench" Height="34" Width="140" TabIndex="8" Margin="219,117,103,246" HorizontalAlignment="Right" VerticalAlignment="Bottom" >French</RadioButton>
+		<RadioButton Name="rbNederlands" Height="34" Width="140" TabIndex="9" Margin="44,158,278,205" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Nederlands</RadioButton>
+		<RadioButton Name="rbRussian" Height="34" Width="140" TabIndex="7" Margin="219,76,103,287" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Russian</RadioButton>
+		<RadioButton Name="rbHungarian" Height="34" Width="140" TabIndex="8" Margin="44,117,278,246" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Hungarian</RadioButton>
+		<RadioButton Name="rbPolish" Height="34" Width="140" TabIndex="6" Margin="219,33,103,330" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Polish</RadioButton>
+		<RadioButton Name="rbEnglish" Height="34" Width="140" TabIndex="7" Margin="44,76,278,287" HorizontalAlignment="Right" VerticalAlignment="Bottom" >English</RadioButton>
+		<RadioButton Name="rbDeustch" Height="34" Width="140" TabIndex="6" Margin="44,33,278,330" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Deustch</RadioButton>
+		</Canvas>
+		</TabItem>
+		</TabControl>
+		
+	</DockPanel>
+</Window>
+

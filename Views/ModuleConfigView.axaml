@@ -1,0 +1,131 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RateController.Views.ModuleConfigView"
+         SizeToContent="WidthAndHeight" CanResize="False"
+	    Title="Module Config">
+	<Window.Styles>
+        <StyleInclude Source="/Styles/GroupBox.axaml"/>
+    </Window.Styles>
+    <DockPanel Height="610" Width="521" Margin="10">
+    <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Spacing="10">
+		<Button Name="btnPCB" Height="72" Width="72" TabIndex="152" Background="Transparent" Click="btnPCB_Click" ></Button>
+		<Button Name="btnSendToModule" Height="72" Width="72" TabIndex="150" Background="Transparent" Click="btnSendToModule_Click" ></Button>
+		<Button Name="btnCancel" Height="72" Width="72" TabIndex="1" IsEnabled="False" Background="Transparent" Click="btnCancel_Click" ></Button>
+		<Button Name="btnClose" Height="72" Width="72" TabIndex="0" Background="Transparent" Click="btnClose_Click" ></Button>
+		</StackPanel>
+		<TabControl Name="tabControl1" Height="514" Width="491" TabStripPlacement= "Top" >
+		<TabItem Name="tabPage6" Header="Boards" >
+		<Canvas Name="cantabPage6" Height="477" Width="483" >
+		<Panel Name="toolStrip1" Height="25" Width="483" TabIndex="48" Margin="-10,-15,48,600" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Panel>
+		<HeaderedContentControl Header="Type" Background="Gray" Margin="90,51,139,324" HorizontalAlignment="Right" VerticalAlignment="Bottom" ><Canvas Height="211" Width="268" >
+		<RadioButton Name="rbNano" Height="37" Width="170" TabIndex="0" Margin="48,26,303,547" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Nano</RadioButton>
+		<RadioButton Name="rbESP32" Height="37" Width="170" TabIndex="46" Margin="48,148,303,425" HorizontalAlignment="Right" VerticalAlignment="Bottom" >ESP32</RadioButton>
+		<RadioButton Name="rbTeensy" Height="37" Width="170" TabIndex="45" Margin="48,87,303,486" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Teensy</RadioButton>
+		</Canvas> 		</HeaderedContentControl>
+		<ToggleSwitch Name="ckDefaultModule" TabIndex="43" Margin="138,307,213,234" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckDefaultModule_CheckedChanged" >Set Module to default values</ToggleSwitch>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tabPage3" Header="Network" >
+		<Canvas Name="cantabPage3" Height="477" Width="483" >
+		<TextBlock Name="lbIP" Height="33" Width="85" FontSize="11"  TabIndex="217" Margin="73,163,363,414" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Local IP</TextBlock>
+		<TextBlock Name="lbModuleIP" Height="33" Width="170" FontSize="11"  TabIndex="216" Margin="238,120,113,457" HorizontalAlignment="Right" VerticalAlignment="Bottom" >192.168.100.100</TextBlock>
+		<TextBlock Name="lbSubnet" Height="33" Width="158" FontSize="11"  TabIndex="215" Margin="73,120,290,457" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Selected Subnet</TextBlock>
+		<ComboBox Name="cbEthernet" Height="32" Width="157" TabIndex="212" Margin="232,160,132,418" HorizontalAlignment="Right" VerticalAlignment="Bottom"  />
+		<Button Name="btnSendSubnet" Height="72" Width="72" TabIndex="211" Background="Transparent" Click="btnSendSubnet_Click" Margin="137,223,312,315" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<Button Name="btnRescan" Height="72" Width="72" TabIndex="210" Background="Transparent" Click="btnRescan_Click" Margin="236,223,213,315" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tabPage1" Header="Config" >
+		<Canvas Name="cantabPage1" Height="477" Width="483" >
+		<TextBlock Name="lbRelay" Height="33" Width="131" FontSize="11"  TabIndex="47" Margin="63,209,327,368" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay Control</TextBlock>
+		<ComboBox Name="cbRelayControl" Height="32" Width="187" TabIndex="46" Margin="202,205,132,373" HorizontalAlignment="Right" VerticalAlignment="Bottom"  >
+			<ComboBoxItem>No Relays</ComboBoxItem>
+			<ComboBoxItem>GPIOs</ComboBoxItem>
+			<ComboBoxItem>PCA9555  8 relays</ComboBoxItem>
+			<ComboBoxItem>PCA9555  16 relays</ComboBoxItem>
+			<ComboBoxItem>MCP23017</ComboBoxItem>
+			<ComboBoxItem>PCA9685 single</ComboBoxItem>
+			<ComboBoxItem>PCA9685 paired</ComboBoxItem>
+			<ComboBoxItem>PCF8574</ComboBoxItem>
+		</ComboBox>
+		<TextBox Name="tbWifiPort" Height="29" Width="58" TextAlignment="Center" TabIndex="45" TextInput="textbox_TextChanged" Margin="331,159,132,422" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="lbWifiPort" Height="33" Width="144" FontSize="11"  TabIndex="44" Margin="63,161,314,416" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Wifi  Serial Port</TextBlock>
+		<ToggleSwitch Name="ckFlowOn" TabIndex="43" Margin="236,304,168,237" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="textbox_CheckedChanged" >Invert Flow Control</ToggleSwitch>
+		<ToggleSwitch Name="ckRelayOn" TabIndex="42" Margin="100,304,304,237" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="textbox_CheckedChanged" >Invert Relays</ToggleSwitch>
+		<TextBox Name="tbSensorCount" Height="29" Width="58" TextAlignment="Center" TabIndex="27" TextInput="textbox_TextChanged" Margin="331,111,132,470" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="lbSensorCount" Height="33" Width="134" FontSize="11"  TabIndex="26" Margin="63,113,324,464" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Sensor Count</TextBlock>
+		<TextBox Name="tbModuleID" Height="29" Width="58" TextAlignment="Center" TabIndex="25" TextInput="textbox_TextChanged" Margin="331,63,132,518" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="lbModuleID" Height="33" Width="105" FontSize="11"  TabIndex="24" Margin="63,65,353,512" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Module ID</TextBlock>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tabPage2" Header="Pins" >
+		<Canvas Name="cantabPage2" Height="477" Width="483" >
+		<ToggleSwitch Name="ckMomentary"  TabIndex="82" Margin="299,312,103,258" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckClient_CheckedChanged" >Momentary</ToggleSwitch>
+		<TextBox Name="tbWrk" Height="29" Width="58" TextAlignment="Center" TabIndex="81" TextInput="textbox_TextChanged" Margin="226,317,237,264" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="lbWorkPin" Height="33" Width="95" FontSize="11"  TabIndex="80" Margin="115,320,311,257" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Work Pin</TextBlock>
+		<TextBox Name="tbPWM2" Height="29" Width="58" TextAlignment="Center" TabIndex="79" TextInput="textbox_TextChanged" Margin="226,273,237,308" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label7" Height="33" Width="80" FontSize="11"  TabIndex="78" Margin="115,275,326,302" HorizontalAlignment="Right" VerticalAlignment="Bottom" >PWM 2</TextBlock>
+		<TextBox Name="tbPWM1" Height="29" Width="58" TextAlignment="Center" TabIndex="77" TextInput="textbox_TextChanged" Margin="226,231,237,350" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label8" Height="33" Width="80" FontSize="11"  TabIndex="76" Margin="115,233,326,344" HorizontalAlignment="Right" VerticalAlignment="Bottom" >PWM 1</TextBlock>
+		<TextBox Name="tbDir2" Height="29" Width="58" TextAlignment="Center" TabIndex="75" TextInput="textbox_TextChanged" Margin="226,189,237,392" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label5" Height="33" Width="57" FontSize="11"  TabIndex="74" Margin="115,191,349,386" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Dir 2</TextBlock>
+		<TextBox Name="tbDir1" Height="29" Width="58" TextAlignment="Center" TabIndex="73" TextInput="textbox_TextChanged" Margin="226,147,237,434" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label6" Height="33" Width="57" FontSize="11"  TabIndex="72" Margin="115,149,349,428" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Dir 1</TextBlock>
+		<TextBox Name="tbFlow2" Height="29" Width="58" TextAlignment="Center" TabIndex="71" TextInput="textbox_TextChanged" Margin="226,105,237,476" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label3" Height="33" Width="75" FontSize="11"  TabIndex="70" Margin="115,107,331,470" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Flow 2</TextBlock>
+		<TextBox Name="tbFlow1" Height="29" Width="58" TextAlignment="Center" TabIndex="69" TextInput="textbox_TextChanged" Margin="226,63,237,518" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label4" Height="33" Width="75" FontSize="11"  TabIndex="68" Margin="115,65,331,512" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Flow 1</TextBlock>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tabPage5" Header="Relays" >
+		<Canvas Name="cantabPage5" Height="477" Width="483" >
+		<TextBox Name="tbRelay16" Height="29" Width="58" TextAlignment="Center" TabIndex="133" Margin="365,346,98,235" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label13" Height="33" Width="91" FontSize="11"  TabIndex="132" Margin="254,348,176,229" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 16</TextBlock>
+		<TextBox Name="tbRelay15" Height="29" Width="58" TextAlignment="Center" TabIndex="131" Margin="365,304,98,277" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label15" Height="33" Width="91" FontSize="11"  TabIndex="130" Margin="254,306,176,271" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 15</TextBlock>
+		<TextBox Name="tbRelay14" Height="29" Width="58" TextAlignment="Center" TabIndex="129" Margin="365,262,98,319" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label16" Height="33" Width="91" FontSize="11"  TabIndex="128" Margin="254,264,176,313" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 14</TextBlock>
+		<TextBox Name="tbRelay13" Height="29" Width="58" TextAlignment="Center" TabIndex="127" Margin="365,220,98,361" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label17" Height="33" Width="91" FontSize="11"  TabIndex="126" Margin="254,222,176,355" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 13</TextBlock>
+		<TextBox Name="tbRelay12" Height="29" Width="58" TextAlignment="Center" TabIndex="125" Margin="365,178,98,403" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label18" Height="33" Width="91" FontSize="11"  TabIndex="124" Margin="254,180,176,397" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 12</TextBlock>
+		<TextBox Name="tbRelay11" Height="29" Width="58" TextAlignment="Center" TabIndex="123" Margin="365,136,98,445" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label19" Height="33" Width="91" FontSize="11"  TabIndex="122" Margin="254,138,176,439" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 11</TextBlock>
+		<TextBox Name="tbRelay10" Height="29" Width="58" TextAlignment="Center" TabIndex="121" Margin="365,94,98,487" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label20" Height="33" Width="91" FontSize="11"  TabIndex="120" Margin="254,96,176,481" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 10</TextBlock>
+		<TextBox Name="tbRelay9" Height="29" Width="58" TextAlignment="Center" TabIndex="119" Margin="365,52,98,529" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label21" Height="33" Width="81" FontSize="11"  TabIndex="118" Margin="254,54,186,523" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 9</TextBlock>
+		<TextBox Name="tbRelay8" Height="29" Width="58" TextAlignment="Center" TabIndex="117" Margin="146,347,317,234" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label22" Height="33" Width="81" FontSize="11"  TabIndex="116" Margin="35,349,405,228" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 8</TextBlock>
+		<TextBox Name="tbRelay7" Height="29" Width="58" TextAlignment="Center" TabIndex="115" Margin="146,305,317,276" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label23" Height="33" Width="81" FontSize="11"  TabIndex="114" Margin="35,307,405,270" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 7</TextBlock>
+		<TextBox Name="tbRelay6" Height="29" Width="58" TextAlignment="Center" TabIndex="113" Margin="146,263,317,318" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label24" Height="33" Width="81" FontSize="11"  TabIndex="112" Margin="35,265,405,312" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 6</TextBlock>
+		<TextBox Name="tbRelay5" Height="29" Width="58" TextAlignment="Center" TabIndex="99" Margin="146,220,317,361" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label14" Height="33" Width="81" FontSize="11"  TabIndex="98" Margin="35,222,405,355" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 5</TextBlock>
+		<TextBox Name="tbRelay4" Height="29" Width="58" TextAlignment="Center" TabIndex="97" Margin="146,178,317,403" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label11" Height="33" Width="81" FontSize="11"  TabIndex="96" Margin="35,180,405,397" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 4</TextBlock>
+		<TextBox Name="tbRelay3" Height="29" Width="58" TextAlignment="Center" TabIndex="95" Margin="146,136,317,445" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label12" Height="33" Width="81" FontSize="11"  TabIndex="94" Margin="35,138,405,439" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 3</TextBlock>
+		<TextBox Name="tbRelay2" Height="29" Width="58" TextAlignment="Center" TabIndex="93" Margin="146,94,317,487" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label9" Height="33" Width="81" FontSize="11"  TabIndex="92" Margin="35,96,405,481" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 2</TextBlock>
+		<TextBox Name="tbRelay1" Height="29" Width="58" TextAlignment="Center" TabIndex="91" Margin="146,52,317,529" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label10" Height="33" Width="81" FontSize="11"  TabIndex="90" Margin="35,54,405,523" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Relay 1</TextBlock>
+		</Canvas>
+		</TabItem>
+		<TabItem Name="tabPage4" Header="Wifi Client" >
+		<Canvas Name="cantabPage4" Height="477" Width="483" >
+		<TextBox Name="tbSSID" Height="29" Width="213" TextAlignment="Center" TabIndex="0" TextInput="tbSSID_TextChanged" Margin="204,210,104,371" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" > </TextBox>
+		<TextBox Name="tbPassword" Height="29" Width="213" TextAlignment="Center" TabIndex="1" TextInput="tbPassword_TextChanged" Margin="204,250,104,331" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBlock Name="label2" Height="33" Width="175" FontSize="11"  TabIndex="219" Margin="42,250,304,327" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Network Password</TextBlock>
+		<TextBlock Name="label1" Height="33" Width="144" FontSize="11"  TabIndex="218" Margin="42,210,335,367" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Network Name</TextBlock>
+		<ToggleSwitch Name="ckClient" TabIndex="2" Margin="152,123,177,455" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="ckClient_CheckedChanged" >Use Wifi Client Mode</ToggleSwitch>
+		</Canvas>
+		</TabItem>
+		</TabControl>
+	</DockPanel>
+</Window>
+

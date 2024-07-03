@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        SizeToContent="WidthAndHeight" CanResize="False"
+        x:Class="RateController.Views.CalibrateView"
+        Title="Calibrate">
+	<Grid Height="538" Width="697" Margin="0, 20">
+		<Button Name="btnHelp" Height="72" Width="72" TabIndex="325" Background="Transparent" Click="btnHelp_Click" Margin="286,450,339,16" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+		     <Image Source="avares://RateController/Resources/Help.png"/>
+		</Button>
+		<TextBox Name="tbRate3" Height="30" Width="99" TextAlignment="Right" TabIndex="324" Margin="164,392,434,116" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBox Name="tbRate2" Height="30" Width="99" TextAlignment="Right" TabIndex="323" Margin="164,292,434,216" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBox Name="tbRate1" Height="30" Width="99" TextAlignment="Right" TabIndex="322" Margin="164,192,434,316" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBox Name="tbRate0" Height="30" Width="99" TextAlignment="Right" TabIndex="321" Margin="164,91,434,417" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<ProgressBar Name="pb3" Height="23" Width="72" TabIndex="320" IsVisible ="false" Margin="602,396,23,119" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+		<ProgressBar Name="pb2" Height="23" Width="72" TabIndex="319" IsVisible ="false" Margin="602,296,23,219" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+		<ProgressBar Name="pb1" Height="23" Width="72" TabIndex="318" IsVisible ="false" Margin="602,196,23,319" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+		<ProgressBar Name="pb0" Height="23" Width="72" TabIndex="316" Margin="602,95,23,420" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+		<TextBlock Name="lbSpeed" Height="33" Width="63" FontSize="11"  TabIndex="314" Foreground="DarkGreen" Margin="245,473,389,32" HorizontalAlignment="Right" VerticalAlignment="Bottom" >mph</TextBlock>
+		<TextBox Name="tbSpeed" Height="30" Width="65" TextAlignment="Center" TabIndex="313" TextInput="tbSpeed_TextChanged" Margin="164,470,468,38" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >5.0</TextBox>
+		<TextBlock Name="lbCalSpeed" Height="32" Width="166" FontSize="11"  TabIndex="4" Margin="11,474,520,32" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Calibration Speed</TextBlock>
+		<TextBlock Name="lbBaseRate" Height="55" Width="102" FontSize="11"  TabIndex="307" Margin="176,-8,419,491" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Base \r\nRate</TextBlock>
+		<TextBox Name="tbMeasured3" Height="30" Width="65" TextAlignment="Center" TabIndex="306" Margin="518,392,114,116" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >100.5</TextBox>
+		<TextBox Name="tbMeasured2" Height="30" Width="65" TextAlignment="Center" TabIndex="305" Margin="518,292,114,216" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >100.5</TextBox>
+		<TextBox Name="tbMeasured1" Height="30" Width="65" TextAlignment="Center" TabIndex="304" Margin="518,192,114,316" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >100.5</TextBox>
+		<TextBox Name="tbMeasured0" Height="30" Width="65" TextAlignment="Center" TabIndex="303" Margin="518,91,114,417" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" >100.5</TextBox>
+		<Button Name="btnCancel" Height="72" Width="72" TabIndex="1" IsEnabled="False" Background="Transparent" Click="btnCancel_Click" Margin="522,449,103,17" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+		      <Image Source="avares://RateController/Resources/Cancel64.png"/>
+		</Button>
+		<Button Name="btnPwr3" Height="72" Width="72" TabIndex="228" Background="Transparent" Margin="8,371,617,95" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+		</Button>
+		<Button Name="btnPwr2" Height="72" Width="72" TabIndex="227" Background="Transparent" Margin="8,271,617,195" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<Button Name="btnPwr1" Height="72" Width="72" TabIndex="226" Background="Transparent" Margin="8,171,617,295" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<Button Name="btnPwr0" Height="72" Width="72" TabIndex="225" Background="Transparent" Margin="8,70,617,396" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<TextBox Name="tbFactor3" Height="30" Width="99" TextAlignment="Right" TabIndex="224" Margin="283,392,315,116" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBox Name="tbFactor2" Height="30" Width="99" TextAlignment="Right" TabIndex="223" Margin="283,292,315,216" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBox Name="tbFactor1" Height="30" Width="99" TextAlignment="Right" TabIndex="222" Margin="283,192,315,316" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<TextBox Name="tbFactor0" Height="30" Width="99" TextAlignment="Right" TabIndex="221" Margin="283,91,315,417" HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+		<Button Name="btnCalStop" Height="72" Width="72" TabIndex="2" Background="Transparent" Click="btnCalStop_Click" Margin="443,449,182,17" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+		     <Image Source="avares://RateController/Resources/Stop.png"/>
+		</Button>
+		<Button Name="btnCalStart" Height="72" Width="72" TabIndex="3" Background="Transparent" Click="btnCalStart_Click" Margin="364,449,261,17" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+		     <Image Source="avares://RateController/Resources/Start_Icon_64.png"/>
+		</Button>
+		<Button Name="btnSet3" Height="72" Width="72" TabIndex="217" Background="Transparent" Margin="602,371,23,95" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<Button Name="btnSet2" Height="72" Width="72" TabIndex="215" Background="Transparent" Margin="602,271,23,195" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<Button Name="btnSet1" Height="72" Width="72" TabIndex="213" Background="Transparent" Margin="602,171,23,295" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<Button Name="btnSet0" Height="72" Width="72" TabIndex="211" IsVisible ="false" Background="Transparent" Margin="602,70,23,396" HorizontalAlignment="Right" VerticalAlignment="Bottom" ></Button>
+		<TextBlock Name="lbMeterSet" Height="55" Width="81" FontSize="11"  TabIndex="159" Margin="611,-8,5,491" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Meter Set</TextBlock>
+		<Button Name="btnOK" Height="72" Width="72" TabIndex="0" Background="Transparent" Click="btnOK_Click" Margin="601,449,24,17" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+		</Button>
+		<TextBlock Name="lbExpected3" Height="33" Width="102" FontSize="11"  TabIndex="153" Margin="415,395,180,110" HorizontalAlignment="Right" VerticalAlignment="Bottom" >19</TextBlock>
+		<TextBlock Name="lbPulses3" Height="33" Width="79" FontSize="11"  TabIndex="152" Margin="102,395,516,110" HorizontalAlignment="Right" VerticalAlignment="Bottom" >52</TextBlock>
+		<TextBlock Name="lbName3" Height="32" Width="219" FontSize="11"  TabIndex="146" Margin="14,346,464,160" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Wheat - Standard Valve\r\n</TextBlock>
+		<TextBlock Name="lbExpected2" Height="33" Width="102" FontSize="11"  TabIndex="145" Margin="415,295,180,210" HorizontalAlignment="Right" VerticalAlignment="Bottom" >19</TextBlock>
+		<TextBlock Name="lbPulses2" Height="33" Width="79" FontSize="11"  TabIndex="144" Margin="102,295,516,210" HorizontalAlignment="Right" VerticalAlignment="Bottom" >52</TextBlock>
+		<TextBlock Name="lbName2" Height="32" Width="219" FontSize="11"  TabIndex="138" Margin="12,246,466,260" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Wheat - Standard Valve\r\n</TextBlock>
+		<TextBlock Name="lbExpected1" Height="33" Width="102" FontSize="11"  TabIndex="137" Margin="415,195,180,310" HorizontalAlignment="Right" VerticalAlignment="Bottom" >19</TextBlock>
+		<TextBlock Name="lbPulses1" Height="33" Width="79" FontSize="11"  TabIndex="136" Margin="102,195,516,310" HorizontalAlignment="Right" VerticalAlignment="Bottom" >52</TextBlock>
+		<TextBlock Name="lbName1" Height="32" Width="219" FontSize="11"  TabIndex="130" Margin="11,145,467,361" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Wheat - Standard Valve\r\n</TextBlock>
+		<TextBlock Name="lbExpected0" Height="33" Width="102" FontSize="11"  TabIndex="129" Margin="415,94,180,411" HorizontalAlignment="Right" VerticalAlignment="Bottom" >19</TextBlock>
+		<TextBlock Name="lbPulses0" Height="33" Width="79" FontSize="11"  TabIndex="128" Margin="102,94,516,411" HorizontalAlignment="Right" VerticalAlignment="Bottom" >52</TextBlock>
+		<TextBlock Name="lbMeasured" Height="55" Width="103" FontSize="11"  TabIndex="120" Margin="512,-8,82,491" HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="Measured&#x0a;Amount"></TextBlock>
+		<TextBlock Name="lbExpected" Height="55" Width="102" FontSize="11"  TabIndex="119" Margin="414,-8,181,491" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Expected Amount</TextBlock>
+		<TextBlock Name="lbCalFactor" Height="55" Width="144" FontSize="11"  TabIndex="118" Margin="274,-8,279,491" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Cal. Factor (Pulses/Unit)</TextBlock>
+		<TextBlock Name="lbPulses" Height="55" Width="79" FontSize="11"  TabIndex="117" Margin="101,-8,517,491" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Pulses</TextBlock>
+		<TextBlock Name="lbDescription" Height="55" Width="94" FontSize="11"  TabIndex="116" Margin="11,-8,592,491" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Product</TextBlock>
+		<TextBlock Name="lbName0" Height="32" Width="241" FontSize="11"  TabIndex="114" Margin="12,44,444,462" HorizontalAlignment="Right" VerticalAlignment="Bottom" >1. Wheat - Standard Valve\r\n</TextBlock>
+	</Grid>
+</Window>
+
