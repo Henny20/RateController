@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" SizeToContent="WidthAndHeight" CanResize="False" x:Class="RateController.MainWindow" Title="Rate Controller" Icon="/Images/RC_logo.png">
+	<Window.Styles>
+      <StyleInclude Source="/Styles/GroupBox.axaml"/>
+  </Window.Styles>
+	<Grid Height="552" Width="620" Margin="0, 50, 0, 0">
+		<TextBlock Name="lbAogConnected" Height="30" Width="72" FontSize="20" Foreground="White" FontWeight="Bold" TextAlignment="Center"  TabIndex="145" Background="Red" Margin="208,173,312,343" HorizontalAlignment="Right" VerticalAlignment="Bottom" PointerPressed="lbAogConnected_Click">AOG</TextBlock><!--Click="lbAogConnected_Click"-->
+		<TextBlock Name="lbArduinoConnected" Height="30" Width="72" FontSize="20" Foreground="White" FontWeight="Bold" TextAlignment="Center"  TabIndex="144" Background="Red" Margin="208,138,312,378" HorizontalAlignment="Right" VerticalAlignment="Bottom" PointerPressed="lbArduinoConnected_Click">Mod</TextBlock><!--Click="lbArduinoConnected_Click"-->
+		<Button Name="btnRight" Height="62" Width="63" TabIndex="143" Background="Transparent" Click="btnRight_Click" Margin="128,138,401,352" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+		    <Image Source="avares://RateController/Images/arrow_right.png"/>		
+		</Button>
+		<Button Name="btnLeft" Height="62" Width="60" TabIndex="142" Background="Transparent" Click="btnLeft_Click" Margin="61,138,471,352" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+		    <Image Source="avares://RateController/Images/arrow_left.png"/>
+		</Button>
+		<Button Name="btnSettings" Height="62" Width="60" TabIndex="73" Background="Transparent" Click="button3_Click" Margin="-6,138,538,352" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+		    <Image Source="avares://RateController/Images/Settings.png"/>
+		    <Button.Flyout>
+				<MenuFlyout>
+			   <MenuItem Name="MnuProducts" FontSize="16" PointerPressed="productsToolStripMenuItem_Click">
+			        <MenuItem.Icon>
+					<Image Width="20" Height="20" Source="avares://RateController/Resources/spray2.png"/>
+				  </MenuItem.Icon>
+				</MenuItem>
+	     	    <MenuItem Name="MnuSections" FontSize="16" PointerPressed="sectionsToolStripMenuItem_Click">
+			        <MenuItem.Icon>
+					<Image Width="16" Height="16" Source="avares://RateController/Images/Sec1.PNG"/>
+				  </MenuItem.Icon>
+			    </MenuItem>
+			    <MenuItem Name="MnuRelays" FontSize="16" PointerPressed="MnuRelays_Click_1">
+	     	         <MenuItem.Icon>
+					<Image Width="16" Height="16" Source="avares://RateController/Resources/Industry-Circuit-icon.png"/>
+				  </MenuItem.Icon>
+			    </MenuItem>
+		        <MenuItem Name="MnuComm" FontSize="16" Click="MnuComm_Click">
+			        <MenuItem.Icon>
+					<Image Width="16" Height="16" Source="avares://RateController/Resources/cableusb_119960.png"/>
+				  </MenuItem.Icon>
+			    </MenuItem>
+	     	    <MenuItem Name="calibrateToolStripMenuItem1" FontSize="16" PointerPressed="calibrateToolStripMenuItem1_Click">
+				    <MenuItem.Icon>
+					<Image Width="16" Height="16" Source="avares://RateController/Images/RateCal.png"/>
+				  </MenuItem.Icon>
+			    </MenuItem>
+			    <MenuItem Name="networkToolStripMenuItem" FontSize="16" PointerPressed="networkToolStripMenuItem_Click">
+			         <MenuItem.Icon>
+					<Image Width="16" Height="16" Source="avares://RateController/Resources/SubnetSend.png"/>
+				  </MenuItem.Icon>
+			    </MenuItem>
+			    <MenuItem Name="pressuresToolStripMenuItem1" FontSize="16" PointerPressed="pressuresToolStripMenuItem1_Click">
+			         <MenuItem.Icon>
+					<Image Width="16" Height="16" Source="avares://RateController/Resources/SubnetSend.png"/>
+				  </MenuItem.Icon>
+			    </MenuItem>
+			    <MenuItem Name="commDiagnosticsToolStripMenuItem" FontSize="16" PointerPressed="commDiagnosticsToolStripMenuItem_Click">
+			         <MenuItem.Icon>
+					<Image Width="16" Height="16" Source="avares://RateController/Resources/SubnetSend.png"/>
+				  </MenuItem.Icon>
+			    </MenuItem>
+			    <MenuItem Name="MnuOptions" FontSize="16" Click="MnuOptions_Click">
+			        <MenuItem.Icon>
+					<Image Width="16" Height="16" Source="avares://RateController/Images/Menu.png"/>
+				  </MenuItem.Icon>
+			    </MenuItem>
+				</MenuFlyout>
+			</Button.Flyout>
+		</Button>
+		<Canvas Name="panProducts" Height="150" Width="271" Margin="-10,-15,331,417" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+		<TextBlock Name="lbTarget" Height="32" Width="210" FontSize="14" FontWeight="Bold"  TabIndex="159" Margin="0,45,382,475" HorizontalAlignment="Right" VerticalAlignment="Bottom">Target Rate</TextBlock><!--Click="lbTarget_Click" -->
+		<!--HeaderedContentControl Header="" Background="Gray" Margin="-5,-9,322,533" HorizontalAlignment="Right" VerticalAlignment="Bottom"><Canvas Height="-14" Width="237">
+		</Canvas> 		</HeaderedContentControl-->
+		<Separator Margin="0, 4 ,300, 520" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+		<TextBlock Name="lbProduct" Height="32" Width="137" FontSize="14" FontWeight="Bold"  TabIndex="157" Margin="3,-15,452,535" HorizontalAlignment="Right" VerticalAlignment="Bottom">Herbicide</TextBlock>
+		<TextBlock Name="SetRate" Height="32" Width="98" FontSize="14" FontWeight="Bold"  TabIndex="156" Margin="188,45,306,475" HorizontalAlignment="Right" VerticalAlignment="Bottom">1,800.50</TextBlock>
+		<TextBlock Name="lbRate" Height="32" Width="184" FontSize="14" FontWeight="Bold"  TabIndex="155" Margin="0,15,408,505" HorizontalAlignment="Right" VerticalAlignment="Bottom">Current Rate</TextBlock><!--Click="lbRate_Click"-->
+		<TextBlock Name="TankRemain" Height="32" Width="98" FontSize="14" FontWeight="Bold"  TabIndex="153" Margin="188,105,306,415" HorizontalAlignment="Right" VerticalAlignment="Bottom">50000.1</TextBlock>
+		<TextBlock Name="lblUnits" Height="32" Width="141" FontSize="14" FontWeight="Bold"  TabIndex="152" Margin="145,-15,306,535" HorizontalAlignment="Right" VerticalAlignment="Bottom">Imp Gal/Min</TextBlock>
+		<TextBlock Name="AreaDone" Height="32" Width="98" FontSize="14" FontWeight="Bold"  TabIndex="147" Margin="188,75,306,445" HorizontalAlignment="Right" VerticalAlignment="Bottom">0</TextBlock>
+		<TextBlock Name="lbRateAmount" Height="32" Width="98" FontSize="14" FontWeight="Bold"  TabIndex="146" Margin="188,17,306,503" HorizontalAlignment="Right" VerticalAlignment="Bottom">1,800.50</TextBlock>
+		<TextBlock Name="lbCoverage" Height="32" Width="184" FontSize="14" FontWeight="Bold"  TabIndex="150" Margin="0,75,408,445" HorizontalAlignment="Right" VerticalAlignment="Bottom">Coverage</TextBlock><!--Click="lbCoverage_Click"-->
+		<TextBlock Name="lbRemaining" Height="32" Width="210" FontSize="14" FontWeight="Bold"  TabIndex="149" Margin="0,105,382,415" HorizontalAlignment="Right" VerticalAlignment="Bottom">Quantity Applied ...</TextBlock><!--Click="label34_Click"-->
+		</Canvas>
+		<Canvas Name="panSummary" Height="200" Width="270" Margin="291,119,31,233" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+		<TextBlock Name="tg3" Height="32" Width="99" FontSize="14" FontWeight="Bold"  TabIndex="129" Margin="55,72,438,448" HorizontalAlignment="Right" VerticalAlignment="Bottom">0</TextBlock>
+		<TextBlock Name="tg2" Height="32" Width="99" FontSize="14" FontWeight="Bold"  TabIndex="128" Margin="55,43,438,477" HorizontalAlignment="Right" VerticalAlignment="Bottom">0</TextBlock>
+		<TextBlock Name="tg1" Height="32" Width="99" FontSize="14" FontWeight="Bold"  TabIndex="127" Margin="55,14,438,506" HorizontalAlignment="Right" VerticalAlignment="Bottom">0</TextBlock>
+		<TextBlock Name="tg0" Height="32" Width="99" FontSize="14" FontWeight="Bold"  TabIndex="126" Margin="55,-15,438,535" HorizontalAlignment="Right" VerticalAlignment="Bottom">0</TextBlock>
+		<TextBlock Name="idc5" Height="32" Width="39" FontSize="14" FontWeight="Bold"  TabIndex="125" Margin="240,130,313,390" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+		<TextBlock Name="rt5" Height="32" Width="99" FontSize="14" FontWeight="Bold"  TabIndex="124" Margin="148,130,345,390" HorizontalAlignment="Right" VerticalAlignment="Bottom">0</TextBlock>
+		<TextBlock Name="prd5" Height="32" Width="83" FontSize="14" FontWeight="Bold"  TabIndex="123" Margin="3,130,506,390" HorizontalAlignment="Right" VerticalAlignment="Bottom">6</TextBlock>
+		<TextBlock Name="idc0" Height="32" Width="39" FontSize="14" FontWeight="Bold"  TabIndex="122" Margin="240,-15,313,535" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+		<TextBlock Name="prd4" Height="32" Width="83" FontSize="14" FontWeight="Bold"  TabIndex="121" Margin="3,101,506,419" HorizontalAlignment="Right" VerticalAlignment="Bottom">5</TextBlock>
+		<TextBlock Name="rt4" Height="32" Width="99" FontSize="14" FontWeight="Bold"  TabIndex="120" Margin="148,101,345,419" HorizontalAlignment="Right" VerticalAlignment="Bottom">0</TextBlock>
+		<TextBlock Name="idc4" Height="32" Width="39" FontSize="14" FontWeight="Bold"  TabIndex="119" Margin="240,101,313,419" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+		<TextBlock Name="prd3" Height="32" Width="59" FontSize="14" FontWeight="Bold"  TabIndex="118" Margin="3,72,530,448" HorizontalAlignment="Right" VerticalAlignment="Bottom">4</TextBlock>
+		<TextBlock Name="rt3" Height="32" Width="99" FontSize="14" FontWeight="Bold"  TabIndex="117" Margin="148,72,345,448" HorizontalAlignment="Right" VerticalAlignment="Bottom">0</TextBlock>
+		<TextBlock Name="idc3" Height="32" Width="39" FontSize="14" FontWeight="Bold"  TabIndex="116" Margin="240,72,313,448" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+		<TextBlock Name="prd2" Height="32" Width="59" FontSize="14" FontWeight="Bold"  TabIndex="115" Margin="3,43,530,477" HorizontalAlignment="Right" VerticalAlignment="Bottom">3</TextBlock>
+		<TextBlock Name="rt2" Height="32" Width="99" FontSize="14" FontWeight="Bold"  TabIndex="114" Margin="148,43,345,477" HorizontalAlignment="Right" VerticalAlignment="Bottom">0</TextBlock>
+		<TextBlock Name="idc2" Height="32" Width="39" FontSize="14" FontWeight="Bold"  TabIndex="113" Margin="240,43,313,477" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+		<TextBlock Name="prd1" Height="32" Width="59" FontSize="14" FontWeight="Bold"  TabIndex="112" Margin="3,14,530,506" HorizontalAlignment="Right" VerticalAlignment="Bottom">2</TextBlock>
+		<TextBlock Name="rt1" Height="32" Width="99" FontSize="14" FontWeight="Bold"  TabIndex="111" Margin="148,14,345,506" HorizontalAlignment="Right" VerticalAlignment="Bottom">0</TextBlock>
+		<TextBlock Name="idc1" Height="32" Width="39" FontSize="14" FontWeight="Bold"  TabIndex="110" Margin="240,14,313,506" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+		<TextBlock Name="prd0" Height="32" Width="59" FontSize="14" FontWeight="Bold"  TabIndex="109" Margin="3,-15,530,535" HorizontalAlignment="Right" VerticalAlignment="Bottom">1</TextBlock>
+		<TextBlock Name="rt0" Height="32" Width="99" FontSize="14" FontWeight="Bold"  TabIndex="108" Margin="147,-15,346,535" HorizontalAlignment="Right" VerticalAlignment="Bottom">0</TextBlock>
+		</Canvas>
+		<Canvas Name="panFan" Height="161" Width="270" Margin="282,347,40,44" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+		<Button Name="btnFan" Height="50" Width="50" TabIndex="203" Background="Transparent" Click="btnFan_Click" Margin="107,83,435,419" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+		     <Image Source="avares://RateController/Resources/FanOff.png"/>
+		     <!--https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Ardiansyah - Flaticon-->
+		</Button>
+		<TextBlock Name="lbOn" Height="32" Width="39" FontSize="14" FontWeight="Bold"  TabIndex="169" Margin="235,-12,318,532" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+		<TextBlock Name="lbOff" Height="32" Width="39" FontSize="14" FontWeight="Bold"  TabIndex="168" Margin="235,-12,318,532" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+		<!--HeaderedContentControl Header="" Background="Gray" Margin="9,9,322,533" HorizontalAlignment="Right" VerticalAlignment="Bottom"><Canvas Height="-14" Width="237">
+		</Canvas> 		</HeaderedContentControl-->
+		<TextBlock Name="lbTargetRPM" Height="32" Width="98" FontSize="14" FontWeight="Bold"  TabIndex="162" Margin="188,45,306,475" HorizontalAlignment="Right" VerticalAlignment="Bottom">1,800.50</TextBlock>
+		<TextBlock Name="label4" Height="32" Width="210" FontSize="14" FontWeight="Bold"  TabIndex="161" Margin="0,45,382,475" HorizontalAlignment="Right" VerticalAlignment="Bottom">Target RPM</TextBlock>
+		<TextBlock Name="lbFanRate" Height="32" Width="184" FontSize="14" FontWeight="Bold"  TabIndex="160" Margin="0,15,408,505" HorizontalAlignment="Right" VerticalAlignment="Bottom">Current RPM</TextBlock>
+		<TextBlock Name="lbCurrentRPM" Height="32" Width="98" FontSize="14" FontWeight="Bold"  TabIndex="159" Margin="188,15,306,505" HorizontalAlignment="Right" VerticalAlignment="Bottom">1,800.50</TextBlock>
+		<TextBlock Name="lbFan" Height="32" Width="207" FontSize="14" FontWeight="Bold"  TabIndex="158" Margin="3,-15,382,535" HorizontalAlignment="Right" VerticalAlignment="Bottom">Herbicide</TextBlock>
+		</Canvas>
+		<Button Name="btAlarm" Classes="accent" Height="120" Width="168" TabIndex="146" Click="btAlarm_Click" Margin="2,223,422,209" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Rate  Alarm  Pressure Alarm">
+		    <Image Source="avares://RateController/Images/alert.png"/>
+		</Button>
+	</Grid>
+</Window>
